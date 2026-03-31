@@ -1,0 +1,21 @@
+#ignore virtual environment
+/venv/
+
+#ignore .idea from pycharm
+/.idea/*
+
+>>>>>>> dev
+
+#ignore pycache
+__pycache__/
+*.py[cod]
+
+#ignore logs
+*.log
+
+#ignore backups
+*.zip
+
+# kevdagoat custom patterns :)
+.vscode/*
+custom_scripts/

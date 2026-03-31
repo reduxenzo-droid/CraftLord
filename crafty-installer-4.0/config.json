@@ -1,0 +1,8 @@
+{
+  "install_dir": "/var/opt/minecraft/crafty",
+  "unattended": false,
+  "clone_method": "https",
+  "branch": "beta",
+  "install_all_software": true,
+  "debug_mode": false
+}

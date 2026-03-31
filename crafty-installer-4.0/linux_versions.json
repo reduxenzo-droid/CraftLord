@@ -1,0 +1,76 @@
+{
+    "arch": {
+        "versions": [],
+        "support-level": ":material-check-all: Full"
+    },
+    "archarm": {
+        "versions": [],
+        "support-level": ":material-check-all: Full"
+    },
+    "centos": {
+        "versions": [
+            "9"
+        ],
+        "support-level": ":material-check-all: Full"
+    },
+    "debian": {
+        "versions": [
+            "12",
+            "13"
+        ],
+        "support-level": ":material-check-all: Full"
+    },
+    "fedora": {
+        "versions": [
+            "39",
+            "40"
+        ],
+        "support-level": ":material-check-all: Full"
+    },
+    "linuxmint": {
+        "versions": [
+            "21.2",
+            "21.3",
+            "22"
+        ],
+        "support-level": ":material-check-all: Full"
+    },
+    "manjaro": {
+        "versions": [],
+        "support-level": ":material-check-all: Full"
+    },
+    "pop": {
+        "versions": [
+            "22.04"
+        ],
+        "support-level": ":material-check-all: Full"
+    },
+    "raspbian": {
+        "versions": [
+            "11",
+            "12"
+        ],
+        "support-level": ":material-check-all: Full"
+    },
+    "rocky": {
+        "versions": [
+            "9.4"
+        ],
+        "support-level": ":material-check-all: Full"
+    },
+    "ubuntu": {
+        "versions": [
+            "22.04",
+            "23.10",
+            "24.04",
+            "24.10"
+        ],
+        "support-level": ":material-check-all: Full"
+    },
+    "zorin": {
+        "versions": [
+            "17"
+        ],
+        "support-level": ":material-check-all: Full"
+    }
+}
