@@ -1,0 +1,100 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  CreativePatchingLoader (CreativeCore_v1.10.71_mc1.12.2.jar)
+  SecurityCraftLoadingPlugin ([1.12.2] SecurityCraft v1.10.1.jar)
+  ItemPatchingLoader (ItemPhysic_Full_1.4.37_mc1.12.2.jar)
+  Techguns Core (techguns-1.12.2-2.0.2.0_pre3.2.jar)
+  MalisisCorePlugin (malisiscore-1.12.2-6.5.1.jar)
+  McLib core mod (mclib-2.4.3-1.12.2.jar)
+  ObfuscatePlugin (obfuscate-0.4.2-1.12.2.jar)
+Contact their authors BEFORE contacting forge
+
+// Oh - I know what I did wrong!
+
+Time: 3/29/26 11:44 PM
+Description: Exception in server tick loop
+
+Missing Mods:
+	unknown : need [1.2,1.3): have missing
+	unknown : need [1.1,): have missing
+
+net.minecraftforge.fml.common.MissingModsException: Mod immersiverailroading (Immersive Railroading) requires [universalmodcore@[1.2,1.3), trackapi@[1.1,)]
+	at net.minecraftforge.fml.common.Loader.sortModList(Loader.java:266)
+	at net.minecraftforge.fml.common.Loader.loadMods(Loader.java:572)
+	at net.minecraftforge.fml.server.FMLServerHandler.beginServerLoading(FMLServerHandler.java:98)
+	at net.minecraftforge.fml.common.FMLCommonHandler.onServerStart(FMLCommonHandler.java:333)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71197_b(DedicatedServer.java:125)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Linux (amd64) version 6.8.0-1044-azure
+	Java Version: 1.8.0_482, Private Build
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Private Build
+	Memory: 896621336 bytes (855 MB) / 1487929344 bytes (1419 MB) up to 29826220032 bytes (28444 MB)
+	JVM Flags: 2 total; -Xms1000M -Xmx32000M
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.42 Powered by Forge 14.23.5.2864 33 mods loaded, 32 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State | ID                   | Version               | Source                                        | Signature |
+	|:----- |:-------------------- |:--------------------- |:--------------------------------------------- |:--------- |
+	| L     | minecraft            | 1.12.2                | minecraft.jar                                 | None      |
+	| L     | mcp                  | 9.42                  | minecraft.jar                                 | None      |
+	| L     | FML                  | 8.0.99.99             | forge-1.12.2-14.23.5.2864.jar                 | None      |
+	| L     | forge                | 14.23.5.2864          | forge-1.12.2-14.23.5.2864.jar                 | None      |
+	| L     | creativecoredummy    | 1.0.0                 | minecraft.jar                                 | None      |
+	| L     | itemphysic           | 1.4.0                 | minecraft.jar                                 | None      |
+	| UD    | mclib_core           | 2.4.3                 | minecraft.jar                                 | None      |
+	| L     | obfuscate            | 0.4.2                 | minecraft.jar                                 | None      |
+	| L     | techguns_core        | 1.12.2-1.0            | minecraft.jar                                 | None      |
+	| L     | securitycraft        | v1.10.1               | [1.12.2] SecurityCraft v1.10.1.jar            | None      |
+	| L     | appliedenergistics2  | rv6-stable-7          | appliedenergistics2-rv6-stable-7.jar          | None      |
+	| L     | chiselsandbits       | 14.33                 | chiselsandbits-14.33.jar                      | None      |
+	| L     | creativecore         | 1.10.0                | CreativeCore_v1.10.71_mc1.12.2.jar            | None      |
+	| L     | props                | 2.6.3.7               | Decocraft-2.6.3.7_1.12.2.jar                  | None      |
+	| L     | elevatorid           | 1.3.14                | ElevatorMod-1.12.2-1.3.14.jar                 | None      |
+	| L     | emoticons            | 1.1.2                 | emoticons-1.1.2-1.12.2.jar                    | None      |
+	| L     | cfm                  | 6.3.0                 | furniture-6.3.2-1.12.2.jar                    | None      |
+	| L     | cgm                  | 0.15.3                | guns-0.15.3-1.12.2.jar                        | None      |
+	| L     | lasers-addon         | 1.0.0                 | Home_Security_Mod_1.12.2.jar                  | None      |
+	| L     | mts                  | 23.0.0                | Immersive Vehicles-1.12.2-23.0.0.jar          | None      |
+	| L     | immersiverailroading | 1.10.0                | ImmersiveRailroading-1.12.2-forge-1.10.0.jar  | None      |
+	| L     | jei                  | 4.16.1.1013           | jei_1.12.2-4.16.1.1013.jar                    | None      |
+	| L     | journeymap           | 1.12.2-5.7.1p3        | journeymap-1.12.2-5.7.1p3.jar                 | None      |
+	| L     | lasermod             | 0.1 Patch 4.1         | lasermod-0.1 Patch 4.1.jar                    | None      |
+	| L     | malisiscore          | 1.12.2-6.5.1-SNAPSHOT | malisiscore-1.12.2-6.5.1.jar                  | None      |
+	| L     | malisisdoors         | 1.12.2-7.3.0          | malisisdoors-1.12.2-7.3.0.jar                 | None      |
+	| L     | mclib                | 2.4.3                 | mclib-2.4.3-1.12.2.jar                        | None      |
+	| L     | cdm                  | 0.4.1                 | MrCrayfishs-Device-Mod-1.12.2.jar             | None      |
+	| L     | techguns             | 2.0.2.0               | techguns-1.12.2-2.0.2.0_pre3.2.jar            | None      |
+	| L     | unuparts             | 6.7.3                 | UNU Parts Pack [MTS] 1.12.2-22.18.0-6.7.3.jar | None      |
+	| L     | vehicle              | 0.44.1                | vehicle-mod-0.44.1-1.12.2.jar                 | None      |
+	| L     | weaponmaster_ydm     | 4.2.3                 | weaponmaster_ydm-forge-1.12.2-4.2.3.jar       | None      |
+	| L     | worldedit            | 6.1.10                | worldedit-forge-mc1.12.2-6.1.10-dist.jar      | None      |
+
+	Loaded coremods (and transformers): 
+CreativePatchingLoader (CreativeCore_v1.10.71_mc1.12.2.jar)
+  
+SecurityCraftLoadingPlugin ([1.12.2] SecurityCraft v1.10.1.jar)
+  
+ItemPatchingLoader (ItemPhysic_Full_1.4.37_mc1.12.2.jar)
+  com.creativemd.itemphysic.ItemTransformer
+Techguns Core (techguns-1.12.2-2.0.2.0_pre3.2.jar)
+  techguns.core.TechgunsASMTransformer
+MalisisCorePlugin (malisiscore-1.12.2-6.5.1.jar)
+  
+McLib core mod (mclib-2.4.3-1.12.2.jar)
+  mchorse.mclib.core.McLibCMClassTransformer
+ObfuscatePlugin (obfuscate-0.4.2-1.12.2.jar)
+  com.mrcrayfish.obfuscate.asm.ObfuscateTransformer
+	Profiler Position: N/A (disabled)
+	Is Modded: Definitely; Server brand changed to 'fml,forge'
+	Type: Dedicated Server (map_server.txt)

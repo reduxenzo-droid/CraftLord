@@ -1,0 +1,333 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  CreativePatchingLoader (CreativeCore_v1.10.71_mc1.12.2.jar)
+  SecurityCraftLoadingPlugin ([1.12.2] SecurityCraft v1.10.1.jar)
+  ItemPatchingLoader (ItemPhysic_Full_1.4.37_mc1.12.2.jar)
+  Techguns Core (techguns-1.12.2-2.0.2.0_pre3.2.jar)
+  MalisisCorePlugin (malisiscore-1.12.2-6.5.1.jar)
+  McLib core mod (mclib-2.4.3-1.12.2.jar)
+  ObfuscatePlugin (obfuscate-0.4.2-1.12.2.jar)
+Contact their authors BEFORE contacting forge
+
+// Uh... Did I do that?
+
+Time: 3/30/26 9:21 PM
+Description: Watching Server
+
+java.lang.Error: ServerHangWatchdog detected that a single server tick took 60.00 seconds (should be max 0.05)
+	at net.minecraft.world.World.func_189509_E(World.java:225)
+	at net.minecraft.world.World.func_180495_p(World.java:905)
+	at net.minecraft.world.World.func_147447_a(World.java:1080)
+	at net.minecraft.world.World.func_72933_a(World.java:924)
+	at net.minecraft.world.World.func_72842_a(World.java:2338)
+	at net.minecraft.world.Explosion.func_77278_a(Explosion.java:157)
+	at net.minecraft.world.WorldServer.func_72885_a(WorldServer.java:1169)
+	at net.minecraft.world.World.func_72876_a(World.java:2303)
+	at net.minecraft.entity.item.EntityTNTPrimed.func_70515_d(SourceFile:99)
+	at net.minecraft.entity.item.EntityTNTPrimed.func_70071_h_(SourceFile:89)
+	at net.minecraft.world.World.func_72866_a(World.java:1996)
+	at net.minecraft.world.WorldServer.func_72866_a(WorldServer.java:832)
+	at net.minecraft.world.World.func_72870_g(World.java:1958)
+	at net.minecraft.world.World.func_72939_s(World.java:1762)
+	at net.minecraft.world.WorldServer.func_72939_s(WorldServer.java:613)
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:767)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:397)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server Watchdog
+Stacktrace:
+	at net.minecraft.world.World.func_189509_E(World.java:225)
+	at net.minecraft.world.World.func_180495_p(World.java:905)
+	at net.minecraft.world.World.func_147447_a(World.java:1080)
+	at net.minecraft.world.World.func_72933_a(World.java:924)
+	at net.minecraft.world.World.func_72842_a(World.java:2338)
+	at net.minecraft.world.Explosion.func_77278_a(Explosion.java:157)
+	at net.minecraft.world.WorldServer.func_72885_a(WorldServer.java:1169)
+	at net.minecraft.world.World.func_72876_a(World.java:2303)
+	at net.minecraft.entity.item.EntityTNTPrimed.func_70515_d(SourceFile:99)
+	at net.minecraft.entity.item.EntityTNTPrimed.func_70071_h_(SourceFile:89)
+	at net.minecraft.world.World.func_72866_a(World.java:1996)
+	at net.minecraft.world.WorldServer.func_72866_a(WorldServer.java:832)
+	at net.minecraft.world.World.func_72870_g(World.java:1958)
+	at net.minecraft.world.World.func_72939_s(World.java:1762)
+	at net.minecraft.world.WorldServer.func_72939_s(WorldServer.java:613)
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:767)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:397)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
+
+-- Thread Dump --
+Details:
+	Threads: "AE Compass Service" Id=53 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1e3b9d86
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@1e3b9d86
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Chunk I/O Executor Thread-1" Id=52 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@10fc7031
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@10fc7031
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Netty Epoll Server IO #7" Id=51 RUNNABLE
+	at io.netty.channel.epoll.Native.epollWait0(Native Method)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:117)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:223)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:247)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Netty Epoll Server IO #6" Id=50 RUNNABLE
+	at io.netty.channel.epoll.Native.epollWait0(Native Method)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:117)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:223)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:247)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Netty Epoll Server IO #5" Id=49 RUNNABLE
+	at io.netty.channel.epoll.Native.epollWait0(Native Method)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:117)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:223)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:247)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"File IO Thread" Id=48 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at net.minecraft.world.storage.ThreadedFileIOBase.func_75736_b(SourceFile:51)
+	at net.minecraft.world.storage.ThreadedFileIOBase.run(SourceFile:30)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Server Watchdog" Id=47 RUNNABLE
+	at sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:503)
+	at sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:491)
+	at net.minecraft.server.dedicated.ServerHangWatchdog.run(ServerHangWatchdog.java:45)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Netty Epoll Server IO #4" Id=46 RUNNABLE
+	at io.netty.channel.epoll.Native.epollWait0(Native Method)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:117)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:223)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:247)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Netty Epoll Server IO #3" Id=45 RUNNABLE
+	at io.netty.channel.epoll.Native.epollWait0(Native Method)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:117)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:223)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:247)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Netty Epoll Server IO #2" Id=44 RUNNABLE
+	at io.netty.channel.epoll.Native.epollWait0(Native Method)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:117)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:223)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:247)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Timer-0" Id=43 TIMED_WAITING on java.util.TaskQueue@14c3f6f6
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@14c3f6f6
+	at java.util.TimerThread.mainLoop(Timer.java:552)
+	at java.util.TimerThread.run(Timer.java:505)
+
+
+"SecurityCraft Passcode Hashing" Id=42 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at net.geforcemods.securitycraft.util.PasscodeUtils$HashingThread.run(PasscodeUtils.java:147)
+
+
+"threadDeathWatcher-2-1" Id=40 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at io.netty.util.ThreadDeathWatcher$Watcher.run(ThreadDeathWatcher.java:152)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Netty Epoll Server IO #1" Id=37 RUNNABLE
+	at io.netty.channel.epoll.Native.epollWait0(Native Method)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:117)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:223)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:247)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Netty Epoll Server IO #0" Id=34 RUNNABLE
+	at io.netty.channel.epoll.Native.epollWait0(Native Method)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:117)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:223)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:247)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"Java2D Disposer" Id=33 WAITING on java.lang.ref.ReferenceQueue$Lock@51c17a0a
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@51c17a0a
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
+	at sun.java2d.Disposer.run(Disposer.java:148)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+"DestroyJavaVM" Id=21 RUNNABLE
+
+
+"Server console handler" Id=20 RUNNABLE (in native)
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(FileInputStream.java:255)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	-  locked java.io.BufferedInputStream@13540a19
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	-  locked java.io.InputStreamReader@60da8dba
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	...
+
+
+"Server thread" Id=18 RUNNABLE
+	at net.minecraft.world.World.func_189509_E(World.java:225)
+	at net.minecraft.world.World.func_180495_p(World.java:905)
+	at net.minecraft.world.World.func_147447_a(World.java:1080)
+	at net.minecraft.world.World.func_72933_a(World.java:924)
+	at net.minecraft.world.World.func_72842_a(World.java:2338)
+	at net.minecraft.world.Explosion.func_77278_a(Explosion.java:157)
+	at net.minecraft.world.WorldServer.func_72885_a(WorldServer.java:1169)
+	at net.minecraft.world.World.func_72876_a(World.java:2303)
+	...
+
+
+"Server Infinisleeper" Id=17 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at net.minecraft.server.dedicated.DedicatedServer$1.run(DedicatedServer.java:82)
+
+
+"Snooper Timer" Id=16 TIMED_WAITING on java.util.TaskQueue@6ba5a311
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@6ba5a311
+	at java.util.TimerThread.mainLoop(Timer.java:552)
+	at java.util.TimerThread.run(Timer.java:505)
+
+
+"Signal Dispatcher" Id=4 RUNNABLE
+
+
+"Finalizer" Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@31ee8545
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@31ee8545
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:188)
+
+
+"Reference Handler" Id=2 WAITING on java.lang.ref.Reference$Lock@25955a3
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.Reference$Lock@25955a3
+	at java.lang.Object.wait(Object.java:502)
+	at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+
+
+Stacktrace:
+	at net.minecraft.server.dedicated.ServerHangWatchdog.run(ServerHangWatchdog.java:62)
+	at java.lang.Thread.run(Thread.java:750)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Linux (amd64) version 6.8.0-1044-azure
+	Java Version: 1.8.0_482, Private Build
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Private Build
+	Memory: 1686724728 bytes (1608 MB) / 7690256384 bytes (7334 MB) up to 29826220032 bytes (28444 MB)
+	JVM Flags: 2 total; -Xms1000M -Xmx32000M
+	IntCache: cache: 1, tcache: 1, allocated: 12, tallocated: 94
+	FML: MCP 9.42 Powered by Forge 14.23.5.2864 26 mods loaded, 25 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID                  | Version               | Source                                   | Signature |
+	|:------ |:------------------- |:--------------------- |:---------------------------------------- |:--------- |
+	| LCHIJA | minecraft           | 1.12.2                | minecraft.jar                            | None      |
+	| LCHIJA | mcp                 | 9.42                  | minecraft.jar                            | None      |
+	| LCHIJA | FML                 | 8.0.99.99             | forge-1.12.2-14.23.5.2864.jar            | None      |
+	| LCHIJA | forge               | 14.23.5.2864          | forge-1.12.2-14.23.5.2864.jar            | None      |
+	| LCHIJA | creativecoredummy   | 1.0.0                 | minecraft.jar                            | None      |
+	| LCHIJA | itemphysic          | 1.4.0                 | minecraft.jar                            | None      |
+	| LCHIJA | obfuscate           | 0.4.2                 | minecraft.jar                            | None      |
+	| LCHIJA | techguns_core       | 1.12.2-1.0            | minecraft.jar                            | None      |
+	| LCHIJA | securitycraft       | v1.10.1               | [1.12.2] SecurityCraft v1.10.1.jar       | None      |
+	| LCHIJA | appliedenergistics2 | rv6-stable-7          | appliedenergistics2-rv6-stable-7.jar     | None      |
+	| LCHIJA | chiselsandbits      | 14.33                 | chiselsandbits-14.33.jar                 | None      |
+	| LCHIJA | creativecore        | 1.10.0                | CreativeCore_v1.10.71_mc1.12.2.jar       | None      |
+	| LCHIJA | props               | 2.6.3.7               | Decocraft-2.6.3.7_1.12.2.jar             | None      |
+	| LCHIJA | elevatorid          | 1.3.14                | ElevatorMod-1.12.2-1.3.14.jar            | None      |
+	| LCHIJA | mclib               | 2.4.3                 | mclib-2.4.3-1.12.2.jar                   | None      |
+	| LCHIJA | emoticons           | 1.1.2                 | emoticons-1.1.2-1.12.2.jar               | None      |
+	| LCHIJA | cfm                 | 6.3.0                 | furniture-6.3.2-1.12.2.jar               | None      |
+	| LCHIJA | cgm                 | 0.15.3                | guns-0.15.3-1.12.2.jar                   | None      |
+	| LCHIJA | journeymap          | 1.12.2-5.7.1p3        | journeymap-1.12.2-5.7.1p3.jar            | None      |
+	| LCHIJA | malisiscore         | 1.12.2-6.5.1-SNAPSHOT | malisiscore-1.12.2-6.5.1.jar             | None      |
+	| LCHIJA | malisisdoors        | 1.12.2-7.3.0          | malisisdoors-1.12.2-7.3.0.jar            | None      |
+	| LCHIJA | cdm                 | 0.4.1                 | MrCrayfishs-Device-Mod-1.12.2.jar        | None      |
+	| LCHIJA | techguns            | 2.0.2.0               | techguns-1.12.2-2.0.2.0_pre3.2.jar       | None      |
+	| LCHIJA | vehicle             | 0.44.1                | vehicle-mod-0.44.1-1.12.2.jar            | None      |
+	| LCHIJA | worldedit           | 6.1.10                | worldedit-forge-mc1.12.2-6.1.10-dist.jar | None      |
+	| UD     | mclib_core          | 2.4.3                 | minecraft.jar                            | None      |
+
+	Loaded coremods (and transformers): 
+CreativePatchingLoader (CreativeCore_v1.10.71_mc1.12.2.jar)
+  
+SecurityCraftLoadingPlugin ([1.12.2] SecurityCraft v1.10.1.jar)
+  
+ItemPatchingLoader (ItemPhysic_Full_1.4.37_mc1.12.2.jar)
+  com.creativemd.itemphysic.ItemTransformer
+Techguns Core (techguns-1.12.2-2.0.2.0_pre3.2.jar)
+  techguns.core.TechgunsASMTransformer
+MalisisCorePlugin (malisiscore-1.12.2-6.5.1.jar)
+  
+McLib core mod (mclib-2.4.3-1.12.2.jar)
+  mchorse.mclib.core.McLibCMClassTransformer
+ObfuscatePlugin (obfuscate-0.4.2-1.12.2.jar)
+  com.mrcrayfish.obfuscate.asm.ObfuscateTransformer
+	AE2 Version: stable rv6-stable-7 for Forge 14.23.5.2768
+	AE2 Integration: IC2:OFF, RC:OFF, MFR:OFF, Waila:OFF, Mekanism:OFF, OpenComputers:OFF, THE_ONE_PROBE:OFF, TESLA:OFF, CRAFTTWEAKER:OFF
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 20; [EntityPlayerMP['lucas284629'/61, l='world', x=-749.62, y=58.40, z=-1641.10]]
+	Is Modded: Definitely; Server brand changed to 'fml,forge'
+	Type: Dedicated Server (map_server.txt)
